@@ -1,0 +1,17 @@
+{
+  "apps": [
+    {
+      "name": "t2sapi",
+      "script" : "./build/main.js",
+      "watch" : ["build"],
+      "env": {
+        "APP_NAME": "T2S-api",
+        "PORT": 9080,
+        "NODE_ENV": "prod",
+        "DATASTORE_CONNECTION_STRING": "mysql://root:PASSWORD!@smartapis.cyou:3308/T2S",
+        "APP_ROUTE_PREFIX" : "api/t2s",
+        "APP_SESSION_ID_HEADER_LABEL" : "authorization"
+      }
+    }
+  ]
+}

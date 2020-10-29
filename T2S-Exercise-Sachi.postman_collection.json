@@ -1,0 +1,353 @@
+{
+	"info": {
+		"_postman_id": "cbb4dbb5-b5e7-43e1-9a75-da289626e50b",
+		"name": "T2S-Exercise-Sachi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Store By Id - Success",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/store/1",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"store",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Store - Success",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\":\"New Store Name\"\n}"
+				},
+				"url": {
+					"raw": "https://smartapis.cyou/api/t2s/store/1",
+					"protocol": "https",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"store",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Stores - Success",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/stores?getAll=true",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"stores"
+					],
+					"query": [
+						{
+							"key": "getAll",
+							"value": "true"
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"description": "explicit mention overrides getAll attribite. Default is 5. Max is 20.",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Stores - Success",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/stores?offset=0&getAll=true&searchKey=oyo",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"stores"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "getAll",
+							"value": "true",
+							"description": "getAll has to be set to true to fetch all records. this overrides limit."
+						},
+						{
+							"key": "searchKey",
+							"value": "oyo"
+						},
+						{
+							"key": "limit",
+							"value": null,
+							"description": "default is 5, max is 20",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stores with Customers Count - Success",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/stores_with_customer_count?offset=0&getAll=true",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"stores_with_customer_count"
+					],
+					"query": [
+						{
+							"key": "offset",
+							"value": "0"
+						},
+						{
+							"key": "getAll",
+							"value": "true"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers by Stores - Success",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/customers?storeId=2",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"customers"
+					],
+					"query": [
+						{
+							"key": "storeId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Store Customer - Success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"storeId\": 10,\n    \"firstName\": \"Sachithanandham\",\n    \"lastName\": \"K\",\n    \"email\": \"sachi@email.com\",\n    \"phone\": \"1234567890\"\n}"
+				},
+				"url": {
+					"raw": "https://smartapis.cyou/api/t2s/customer",
+					"protocol": "https",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Store By Id - Failure (Auth)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "ab830cb28-3faf-4785-9e17-cb0f5b0fde9d"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/store/1",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"store",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Store Customer - Failure",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"storeId\": 12,\n    \"firstName\": \"Divape\",\n    \"lastName\": \"K\",\n    \"email\": \"sachi@optanium.com\",\n    \"phone\": \"1234567890\"\n}"
+				},
+				"url": {
+					"raw": "https://smartapis.cyou/api/t2s/customer",
+					"protocol": "https",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Store By Id - Failure (Unknow ID)",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "b830cb28-3faf-4785-9e17-cb0f5b0fde9d"
+					}
+				],
+				"url": {
+					"raw": "smartapis.cyou/api/t2s/store/12",
+					"host": [
+						"smartapis",
+						"cyou"
+					],
+					"path": [
+						"api",
+						"t2s",
+						"store",
+						"12"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
